@@ -46,9 +46,9 @@ public class StatsService {
         }
         return maxMonth + 1;
     }
-
+    //6. Количество месяцев с продажами выше среднего
     public int moreAverageSales(long[] sales, long avrgSumm) {
-        int month = 0; // переменная для индекса рассматриваемого месяца в массиве
+        int month = 0;
         for (long sale : sales) {
             if (sale > avrgSumm) {
                 month++;
@@ -56,7 +56,7 @@ public class StatsService {
         }
         return month;
     }
-
+    //6. Количество месяцев с продажами ниже среднего
     public int lessAverageSales(long[] sales, long avrgSumm) {
         int month = 0;
         for (long sale : sales) {
