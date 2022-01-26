@@ -46,9 +46,15 @@ public class StatsService {
         }
         return maxMonth + 1;
     }
+
     //6. Количество месяцев с продажами выше среднего
-    public int moreAverageSales(long[] sales, long avrgSumm) {
+    public int moreAverageSales(long[] sales) {
         int month = 0;
+        int avrgSumm = 0;
+        for (long sale : sales) {
+            avrgSumm += sale;
+        }
+        avrgSumm = avrgSumm / sales.length;
         for (long sale : sales) {
             if (sale > avrgSumm) {
                 month++;
@@ -56,9 +62,15 @@ public class StatsService {
         }
         return month;
     }
+
     //6. Количество месяцев с продажами ниже среднего
-    public int lessAverageSales(long[] sales, long avrgSumm) {
+    public int lessAverageSales(long[] sales) {
         int month = 0;
+        int avrgSumm = 0;
+        for (long sale : sales) {
+            avrgSumm += sale;
+        }
+        avrgSumm = avrgSumm / sales.length;
         for (long sale : sales) {
             if (sale < avrgSumm) {
                 month++;

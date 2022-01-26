@@ -47,8 +47,7 @@ class StatsServiceTest {
         int expected = 5;
         StatsService srv = new StatsService();
         long[] salesInTime = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long avrgSumSales = srv.averageSalesSumm(salesInTime);
-        int actual = srv.moreAverageSales(salesInTime, avrgSumSales);
+        int actual = srv.moreAverageSales(salesInTime);
         assertEquals(expected, actual);
     }
 
@@ -57,8 +56,7 @@ class StatsServiceTest {
         int expected = 5;
         StatsService srv = new StatsService();
         long[] salesInTime = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long avrgSumSales = srv.averageSalesSumm(salesInTime);
-        int actual = srv.lessAverageSales(salesInTime, avrgSumSales);
+        int actual = srv.lessAverageSales(salesInTime);
         assertEquals(expected, actual);
     }
 }
