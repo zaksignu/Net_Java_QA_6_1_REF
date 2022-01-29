@@ -13,11 +13,8 @@ public class StatsService {
 
     //2. Средняя сумма продаж в месяц
     public int averageSalesSumm(long[] sales) {
-        int summ = 0;
-        for (long sale : sales) {
-            summ += sale;
-        }
-        summ = summ / sales.length;
+        int summ;
+        summ = wholeSalesSumm (sales) / sales.length;
         return summ;
     }
 
@@ -50,11 +47,9 @@ public class StatsService {
     //6. Количество месяцев с продажами выше среднего
     public int moreAverageSales(long[] sales) {
         int month = 0;
-        int avrgSumm = 0;
-        for (long sale : sales) {
-            avrgSumm += sale;
-        }
-        avrgSumm = avrgSumm / sales.length;
+        long avrgSumm ;
+
+        avrgSumm = averageSalesSumm(sales);
         for (long sale : sales) {
             if (sale > avrgSumm) {
                 month++;
@@ -66,11 +61,8 @@ public class StatsService {
     //6. Количество месяцев с продажами ниже среднего
     public int lessAverageSales(long[] sales) {
         int month = 0;
-        int avrgSumm = 0;
-        for (long sale : sales) {
-            avrgSumm += sale;
-        }
-        avrgSumm = avrgSumm / sales.length;
+        long avrgSumm ;
+        avrgSumm = averageSalesSumm(sales);
         for (long sale : sales) {
             if (sale < avrgSumm) {
                 month++;
